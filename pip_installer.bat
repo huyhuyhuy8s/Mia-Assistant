@@ -30,7 +30,7 @@ pause
 cls
 echo "   -----   DONE   -----   "
 pause
-cd ..
 py GUI.py
 pause
+cd ..
 Run_Mia.bat
