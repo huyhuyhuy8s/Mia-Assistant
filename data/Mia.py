@@ -23,7 +23,7 @@ import sys
 sys.path.append('.\\data')
 #Thư viện python của developer
 import new
-# from users_compare import users_compare
+from users_compare import users_compare
 import compare_lib
 
 # Các biến số ban đầu
@@ -255,7 +255,7 @@ def EN_clock(): #Đồng hồ
 	return mia_brain
 
 def VN_music(you): #Music
-	x = you[you.index(" "):]
+	x = you[you.index("play "):]
 	results = YoutubeSearch(x, max_results=10).to_dict()
 	webbrowser.open('https://www.youtube.com' + str(results[0]['url_suffix']))
 	mia_brain = f"Đang bật {x}"
@@ -266,7 +266,7 @@ def VN_music(you): #Music
 	return runai
 
 def EN_music(you): #Music
-	x = you[you.index("Play "):]
+	x = you[you.index("play "):]
 	results = YoutubeSearch(x, max_results=10).to_dict()
 	webbrowser.open('https://www.youtube.com' + str(results[0]['url_suffix']))
 	mia_brain = f"Playing {x}"
@@ -638,7 +638,7 @@ def VN_teach(): #Dạy AI - Machine Learning
 	learn = input("Nếu mình nghe <input>: ")
 	answer = input("Mình sẽ trả lời <output>: ")
 	if learn != "" and answer != "":
-		os.chdir('.\\data')
+		# os.chdir('.\\data')
 		file1 = open("users_compare.py","a+")
 		file1.seek(157)
 		file1.write("\n" + '	' + 'elif ' + '"' + str(learn) + '"' + ' in you:\n')
@@ -654,7 +654,7 @@ def EN_teach(): #Dạy AI - Machine Learning
 	learn = input("When i hear <input>: ")
 	answer = input("i will say <output>: ")
 	if learn != "" and answer != "":
-		os.chdir('.\\data')
+		# os.chdir('.\\data')
 		file1 = open("users_compare.py","a+")
 		file1.seek(157)
 		file1.write("\n" + '	' + 'elif ' + '"' + str(learn) + '"' + ' in you:\n')
@@ -832,7 +832,7 @@ def VN(username):
 				if you != '':
 					mia_brain = VN_compare(you,username,loichao,volume,temp)
 					if mia_brain == None:
-						mia_brain = compare_lib.users_compare(you,username,loichao,volume)
+						mia_brain = users_compare(you,username,loichao,volume)
 						if mia_brain == None:
 							temp=str('https://www.google.com/search?&q=' + you.replace(" ","%20"))
 							print(f"Mia: Bạn có thể xem qua các kết quả tìm kiếm của {you}\n{temp}")
@@ -944,7 +944,7 @@ def EN(username):
 				if you != '':
 					mia_brain = EN_compare(you,username,loichao,volume,temp)
 					if mia_brain == None:
-						mia_brain = compare_lib.users_compare(you,username,loichao,volume)
+						mia_brain = users_compare(you,username,loichao,volume)
 						if mia_brain == None:
 							temp=str('https://www.google.com/search?&q=' + you.replace(" ","%20"))
 							print(f"Mia: You can check these search for {you}\n{temp}")

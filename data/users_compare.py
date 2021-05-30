@@ -17,3 +17,6 @@ def users_compare(you,username,loichao,volume):
 	elif "không nói nữa" in you:
 		mia_brain = "Không"
 		return mia_brain
+	elif "you" in you:
+		mia_brain = "me"
+		return mia_brain
