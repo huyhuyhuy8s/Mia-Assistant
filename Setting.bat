@@ -3,5 +3,4 @@
 title Setting
 :start
 cls
-cd data
-py GUI.py
+py GUI2.py
