@@ -24,13 +24,15 @@ pip install tkinter
 pip install pyautogui
 pip install pyperclip
 pip install googletrans
+pip install PySimpleGUI
 cd data
 pip install PyAudio-0.2.11-cp39-cp39-win_amd64.whl
 pause
 cls
 echo "   -----   DONE   -----   "
 pause
-py GUI.py
+py GUI2.py
 pause
+cls
 cd ..
 Run_Mia.bat

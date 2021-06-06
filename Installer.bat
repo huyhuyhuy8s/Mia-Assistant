@@ -5,5 +5,3 @@ start msgbox.vbs
 title "INSTALLING MIA"
 cd data
 "python-3.9.0-amd64.exe"
-cd ..
-pip_installer.bat

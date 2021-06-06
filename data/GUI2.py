@@ -102,5 +102,5 @@ def first_window():
 
 	window.close()
 
-os.chdir('.\\data\\data')
+os.chdir('.\\data')
 first_window()
