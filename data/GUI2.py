@@ -9,7 +9,7 @@ sg.set_options(element_padding=(0, 0))
 
 def second_window():
 	menu_def = [['&Tệp', ['&Thông tin', 'E&xit']],
-                ['&Chỉnh sửa', ['&Ngôn ngữ', ['Tiếng Việt', 'Tiếng Anh', ], ], ],
+                ['&Ngôn ngữ', ['Tiếng Việt', 'Tiếng Anh', ], ],
                 ['&Giúp đỡ', '&Về chúng tôi...'], ]
 	right_click_menu = ['Unused', ['Phải', '!&Nhấp', '&Menu', 'E&xit', 'Thông tin']]
 	layout = [[sg.Menu(menu_def, tearoff=False, pad=(200, 1))],
@@ -31,12 +31,14 @@ def second_window():
 			break
 
 		if event == 'Về chúng tôi...':
-			window.disappear()
 			sg.popup('Thông tin về chương trình', 'Phiên bản 1.0',
 					'Phiên bản PySimpleGUI', sg.version,  grab_anywhere=True)
-			window.reappear()
 		elif event == 'Thông tin':
-			second_window()
+			window.disappear()
+			sg.popup('Designed and Programmed by Lê Minh Huy', 'Version 1.1',
+                    'Co-op Design with Lê Đức Anh Tuấn',
+            		'PySimpleGUI Version', sg.version,  grab_anywhere=True)
+			window.reappear()
 		elif event == 'Tiếng Anh':
 			window.close()
 			first_window()
@@ -53,7 +55,7 @@ def second_window():
 
 def first_window():
 	menu_def = [['&File', ['&Properties', 'E&xit']],
-	                ['&Edit', ['&Language', ['Vietnamese', 'English', ], ], ],
+	                ['&Language',  ['Vietnamese', 'English', ], ],
 	                ['&Help', '&About...'], ]
 
 	right_click_menu = ['Unused', ['Right', '!&Click', '&Menu', 'E&xit', 'Properties']]
@@ -71,7 +73,7 @@ def first_window():
 	                   default_element_size=(12, 1),
 	                   default_button_element_size=(12, 1),
 	                   right_click_menu=right_click_menu)
-	
+
 	while True:
 		event, values = window.read()
 		if event == sg.WINDOW_CLOSED or event == 'Quit' or event == 'Exit':
@@ -86,7 +88,11 @@ def first_window():
 			filename = sg.popup_get_file('file to open', no_window=True)
 			print(filename)
 		elif event == 'Properties':
-			second_window()
+			window.disappear()
+			sg.popup('Designed and Programmed by Lê Minh Huy', 'Version 1.1',
+                    'Co-op Design with Lê Đức Anh Tuấn',
+            		'PySimpleGUI Version', sg.version,  grab_anywhere=True)
+			window.reappear()
 		elif event == 'Vietnamese':
 			window.close()
 			second_window()
@@ -103,4 +109,4 @@ def first_window():
 	window.close()
 
 os.chdir('.\\data')
-first_window()
+second_window()
