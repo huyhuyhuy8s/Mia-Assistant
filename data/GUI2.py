@@ -8,7 +8,7 @@ sg.theme('LightGreen')
 sg.set_options(element_padding=(0, 0))
 
 def second_window():
-	menu_def = [['&Tệp', ['&Thông tin', 'E&xit']],
+	menu_def = [['&Menu', ['&Thông tin', 'E&xit']],
                 ['&Ngôn ngữ', ['Tiếng Việt', 'Tiếng Anh', ], ],
                 ['&Giúp đỡ', '&Về chúng tôi...'], ]
 	right_click_menu = ['Unused', ['Phải', '!&Nhấp', '&Menu', 'E&xit', 'Thông tin']]
@@ -54,7 +54,7 @@ def second_window():
 	window.close()
 
 def first_window():
-	menu_def = [['&File', ['&Properties', 'E&xit']],
+	menu_def = [['&Menu', ['&Properties', 'E&xit']],
 	                ['&Language',  ['Vietnamese', 'English', ], ],
 	                ['&Help', '&About...'], ]
 
