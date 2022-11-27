@@ -5,6 +5,7 @@ title "INSTALLING PIP"
 cls
 set python_ver=39
 pip install --upgrade pip
+pip install wheel
 pip install pyttsx3==2.71
 pip install pywin32
 pip install pythoncom
